@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="pasdebolpourtoi"></div>
+    <button id="cliquemoi">Choisi un gars qui a pas de bol</button>
+
+    <script>
+        let apprenants = []
+        var array = localStorage.getItem('apprenants');
+        if (array == null) {
+            apprenants = ["Anais", "Camille", "Abdou", "Gianni", "Taylor", "Sami", "Johan"]
+        }
+        else{
+            apprenants = JSON.parse(array);
+        }
+       
+        //console.log(apprenants)
+
+        let button = document.getElementById("cliquemoi");
+        
+        button.addEventListener("click", function () {
+            
+            let index = Math.floor(Math.random() * apprenants.length)
+           // console.log(apprenants[index])
+            document.getElementById("pasdebolpourtoi").innerHTML = apprenants[index];
+
+            //on supprime la personne choisi du tableau
+            apprenants.splice(index,1)
+            localStorage.setItem('apprenants', JSON.stringify(apprenants));
+            if(apprenants.length<=0){
+                apprenants = ["Anais", "Camille", "Abdou", "Gianni", "Taylor", "Sami", "Johan"]
+            }
+
+            //console.log(apprenants)
+        })
+    </script>
+</body>
+
+</html>
