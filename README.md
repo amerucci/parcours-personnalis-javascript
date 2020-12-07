@@ -1,1 +1,2 @@
-# parcours-personnalis-javascript
+# Parcours personnalisé Javascript
+
