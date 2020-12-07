@@ -12,3 +12,5 @@ Retour sur des notions de bases en javascript, les variables, les boucles et les
 >- localStorage.setItem / localStorage.getItem
 >- JSON.stringify / JSON.parse
 >- Math.floor / Math.random
+>- if / else
+>- boucle for
