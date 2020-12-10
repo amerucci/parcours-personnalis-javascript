@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id='todo'>
+    <input type="button" value="submit" id="do">
+
+
+    <script>
+
+       //var input = document.getElementById("todo").value
+       var btn = document.getElementById("do")
+
+       btn.addEventListener("click", function (){
+        var input = document.getElementById("todo").value
+        console.log(input)
+       })
+
+        
+        
+        // var demo = getfflux(
+        //     "http://api.themoviedb.org/3/list/1?api_key=8400f8e7e485871738542e04b6eabdd4&language=fr-fr");
+        
+
+        // function getfflux(url) {
+        //     // var data 
+        //     // const jsonValue = JSON.parse(data)
+        //     var toto;
+        //     var req = new XMLHttpRequest();
+        //     req.open("GET", url, true);
+        //     req.addEventListener("load", function () {
+        //         if (req.status >= 200 && req.status < 400) {
+        //             var data = JSON.parse(req.response);
+                    
+        //             console.log(data)
+        //             return data
+                    
+                   
+
+        //         } else {
+        //             console.error(req.status + " " + req.statusText + " " + url);
+        //         }
+               
+              
+                
+        //     });
+          
+        //      req.send();
+         
+            
+          
+            
+         
+           
+           
+
+
+
+        // }
+
+            
+
+     
+    </script>
+</body>
+
+</html>

@@ -17,6 +17,7 @@
         //Définition d'un tableau apprenants qui sera utilisé par la suite
         let apprenants = []
         let apprenantsdejapasse = []
+        var liste = "";
         //Création d'une variable array qui analysera le sotrage local pour voir si qqch existe
         var array = localStorage.getItem('apprenants');
         //Si array est null alors on défini des valeurs pour le tableau apprenants
@@ -35,10 +36,14 @@
             document.getElementById("dejapsses").innerHTML = apprenantsdejapasse
 
         }
-        //Sinon on utilise les données pour la tableau issues du storage local
+        //Sinon on utilise les données pour la tableau issues du storage local et on affiche le resultat sous forme de liste
         else {
             apprenantsdejapasse = JSON.parse(arrayalready);
-            document.getElementById("dejapsses").innerHTML = apprenantsdejapasse
+            
+            for (var i = 0; i < apprenantsdejapasse.length; i++) {
+                liste += "<li>"+apprenantsdejapasse[i] + "</li>";
+                }
+                document.getElementById("dejapsses").innerHTML = liste
 
         }
         //Création d'une variable ciblant une div cliquemoi
@@ -61,9 +66,11 @@
             //On enregistre le tableau des apprenants deja passés
             localStorage.setItem('apprenantsdejapasse', JSON.stringify(apprenantsdejapasse));
 
-
-
-            document.getElementById("dejapsses").innerHTML = apprenantsdejapasse
+            var node = document.createElement("LI");
+            var textnode = document.createTextNode(apprenantSelectionne);
+            node.appendChild(textnode);
+            
+            document.getElementById("dejapsses").prepend(node);
 
 
 
@@ -78,7 +85,9 @@
             if (apprenants.length <= 0) {
                 apprenants = ["Anais", "Camille", "Abdou", "Gianni", "Taylor", "Sami", "Johan"]
             }
-            console.log(apprenantsdejapasse)
+            
+
+
         })
     </script>
 </body>

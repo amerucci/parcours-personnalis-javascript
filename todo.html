@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="todo"></div>
+    
+<script>
+
+function toDo(whatToDo) {
+this.content = function () {
+    var add = document.createElement("li");
+    var del = document.createElement('button')
+    add.innerHTML=whatToDo;
+    del.innerHTML="Supprimer"
+    
+    todo.appendChild(add);
+    add.append(del);
+
+    add.onclick = function () {
+      todo.removeChild(this)
+    }
+  
+
+}}
+
+
+
+    let todo = document.getElementById("todo")
+    //Génération du formulaire d'ajout
+    let input = document.createElement("input");
+    let list = document.createElement("div");
+    let btn = document.createElement('button')
+ 
+
+   //bouton
+    btn.innerHTML="Ajouter"
+ 
+    //liste
+    list.id='todolist'
+
+
+
+  todo.appendChild(input);
+  todo.appendChild(btn);
+  todo.appendChild(list);
+
+
+  btn.addEventListener('click', function(){
+    doWhat= new toDo(input.value);
+    doWhat.content();
+    input.value=''
+    
+  })
+</script>
+
+</body>
+</html>
